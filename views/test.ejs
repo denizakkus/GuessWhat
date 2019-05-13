@@ -1,11 +1,69 @@
 <div id="test1">
-    <div class="container text-center">
-      <h1 class="display-1 mb-3">Oh my.</h1>
-      <hr/>
-      <h2>TEST</h2>
-      <div class="help">
-        <p><!--But mark my words, the person responsible will walk the plank for this.<br/><span class="mobile-spacer">&nbsp;</span>-->Need help with your account? Please <a href="/contact">let us know</a>.</p>
-        <a class="btn btn-lg btn-outline-dark" href="/contact">Open a help request</a>
-      </div>
+    
+
+  <!-- TensorFlow.js script -->
+  
+    
+    
+  <!-- main script -->
+  
+
+  <script src="/dependencies/jquery.min.js"></script>
+
+
+
+
+  <!-- internetten cektigim icin simdilik burada -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"> </script>
+  
+
+
+  <script src="/js/main.js"></script>
+
+
+
+  <div class="container-fluid"> 
+
+    <div class="row">
+      <div class="col" style ='margin-left:100px;'>
+    <h4 id ='status'> Loading Model... </h4>	  
+    <canvas id="canvas" width="300" height="300" class="canvas" style="border:1px solid #b9bfc9;margin-top:25px;"></canvas>
+    <div class="btn-group" style = 'margin-top:40px; '>
+    <button type="button" class="btn btn-outline-primary" onclick ='erase()' style ='margin-left:10px;' disabled>Clear</button>
+        </div>   
     </div>
+      <div class="col">
+        <section style="margin-top:120px">
+        
+        <ul class="pieID legend">
+          <li>
+            <em id = "sym1"></em>
+            <span id = "prob1" ></span>
+          </li>
+          <li>
+            <em id = "sym2"></em>
+            <span id = "prob2"></span>
+          </li>
+          <li>
+            <em id = "sym3"></em>
+            <span id = "prob3"></span>
+          </li>
+          <li>
+            <em id = "sym4"></em>
+            <span id = "prob4"></span>
+          </li>
+          <li>
+            <em id = "sym5"></em>
+            <span id = "prob5"></span>
+          </li>
+        </ul>
+      </section>
+    </div>
+    </div>
+
+    <script>
+      console.log('starting');
+      start('en');
+    </script>
+
   </div>
