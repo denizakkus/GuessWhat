@@ -12,6 +12,7 @@ module.exports = {
     success: {
       viewTemplatePath: 'pages/faq'
     }
+    
 
   },
 

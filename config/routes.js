@@ -30,6 +30,7 @@ module.exports.routes = {
   'GET /password/new':       { action: 'entrance/view-new-password' },
 
   'GET /account':            { action: 'account/view-account-overview' },
+  'GET /test':               { action: 'test-controller' },
   'GET /account/password':   { action: 'account/view-edit-password' },
   'GET /account/profile':    { action: 'account/view-edit-profile' },
 
