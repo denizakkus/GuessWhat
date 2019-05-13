@@ -12,26 +12,23 @@
 
 
 
-
   <!-- internetten cektigim icin simdilik burada -->
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"> </script>
-  
 
 
   <script src="/js/main.js"></script>
 
 
-
   <div class="container-fluid"> 
-
     <div class="row">
       <div class="col" style ='margin-left:100px;'>
-    <h4 id ='status'> Loading Model... </h4>	  
-    <canvas id="canvas" width="300" height="300" class="canvas" style="border:1px solid #b9bfc9;margin-top:25px;"></canvas>
-    <div class="btn-group" style = 'margin-top:40px; '>
-    <button type="button" class="btn btn-outline-primary" onclick ='erase()' style ='margin-left:10px;' disabled>Clear</button>
+        <br><br>
+        <h4 id ='status'> Loading Model... </h4>	  
+        <canvas id="canvas" width="600" height="600" class="canvas" style="border:1px solid #b9bfc9;margin-top:25px;"></canvas>
+        <div class="btn-group" style = 'margin-top:40px; '>
+          <button type="button" class="btn btn-outline-primary" onclick ='erase()' style ='margin-left:10px;' disabled>Clear</button>
         </div>   
-    </div>
+      </div>
       <div class="col">
         <section style="margin-top:120px">
         
@@ -57,13 +54,12 @@
             <span id = "prob5"></span>
           </li>
         </ul>
-      </section>
-    </div>
+        </section>
+      </div>
     </div>
 
     <script>
       console.log('starting');
       start('en');
     </script>
-
   </div>
