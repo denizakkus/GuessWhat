@@ -1,4 +1,3 @@
-
 var mouseIsPressed=false;
 var coordinates=[];
 var classNames = [];
@@ -36,6 +35,7 @@ function findIndicesOfMax(inp, count) {
     var outp = [];
     for (var i = 0; i < inp.length; i++) {
         outp.push(i); // add index to output array
+
         if (outp.length > count) {
             outp.sort(function(a, b) {
                 return inp[b] - inp[a];
@@ -43,6 +43,10 @@ function findIndicesOfMax(inp, count) {
             outp.pop(); // remove the last index (index of smallest element in output array)
         }
     }
+    for (var i=0;i<outp.length;i++){
+        console.log("OUTPUT: "+outp[i]);
+    }
+    console.log("inp length: "+inp.length);
     return outp;
 }
 
@@ -100,7 +104,13 @@ get the prediction
 function getFrame() {
     //make sure we have at least two recorded coordinates 
     if (coordinates.length >= 2) {
-
+        console.log("Getframe");
+        
+        console.log("Wat: "+window.classNames.length);
+        for(var i =0; i<window.classNames.length;i++)
+        {
+            console.log("Wat: "+window.classNames[i]);
+        }
         //get the image data from the canvas 
         const imgData = getImageData()
 
@@ -111,7 +121,7 @@ function getFrame() {
         const indices = findIndicesOfMax(pred, 5)
         const probs = findTopValues(pred, 5)
         const names = getClassNames(indices)
-
+       
         //set the table 
         setTable(names, probs)
     }
@@ -121,7 +131,11 @@ function getFrame() {
 function getClassNames(indices) {
     var outp = []
     for (var i = 0; i < indices.length; i++)
-        outp[i] = classNames[indices[i]]
+    {
+        console.log("Indices: "+indices);
+        console.log("Class: "+window.classNames[i]);
+        outp[i] = window.classNames[indices[i]]
+    }
     return outp
 }
 
@@ -165,6 +179,10 @@ $(function()
 {
     if(typeof canvas == 'undefined')
         InitializeCanvas()
+
+    if(window.classNames.length==0)
+        LoadClassFile();
+    
 	canvas.on('mouse:move',function(e){UpdateCoordinates(e);});
 	canvas.on('mouse:down',function(e){mouseIsPressed=true;console.log("MOUSE DOWN");});
 	canvas.on('mouse:up',function(e){getFrame();mouseIsPressed=false; console.log("MOUSE UP");});
@@ -196,6 +214,7 @@ async function LoadClassFile()
 {
 	path = '/model2/class_names.txt'
     await $.ajax({
+        
         url: path,
         dataType: 'text',
     }).done(SetupClassNames);
@@ -206,8 +225,9 @@ function SetupClassNames(data)
     const names = data.split(/\n/)
     for (var i = 0; i < names.length - 1; i++) 
 	{	
-        let name = names[i]
-        classNames[i] = name
+        let name = names[i];
+        window.classNames[i] = name;
+        console.log("Setup class names: "+ window.classNames[i]+ window.classNames.length);
     }
 }
 
