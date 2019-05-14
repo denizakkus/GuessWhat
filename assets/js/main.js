@@ -104,13 +104,7 @@ get the prediction
 function getFrame() {
     //make sure we have at least two recorded coordinates 
     if (coordinates.length >= 2) {
-        console.log("Getframe");
-        
-        console.log("Wat: "+window.classNames.length);
-        for(var i =0; i<window.classNames.length;i++)
-        {
-            console.log("Wat: "+window.classNames[i]);
-        }
+       
         //get the image data from the canvas 
         const imgData = getImageData()
 
@@ -132,8 +126,6 @@ function getClassNames(indices) {
     var outp = []
     for (var i = 0; i < indices.length; i++)
     {
-        console.log("Indices: "+indices);
-        console.log("Class: "+window.classNames[i]);
         outp[i] = window.classNames[indices[i]]
     }
     return outp
@@ -168,11 +160,7 @@ function UpdateCoordinates(event)
     }
 }
 
-//Handles all of the prediction
-function HandlePrediction()
-{
-	console.log("BLEUGH");
-}
+
 
 //Sets up all listeners for the canvas
 $(function()
