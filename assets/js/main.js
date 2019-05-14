@@ -224,7 +224,7 @@ async function start(mode)
 {
 	//Initialize the canvas
     
-    //InitializeCanvas();
+    InitializeCanvas();
     
     //Setup the class names
 	await LoadClassFile();

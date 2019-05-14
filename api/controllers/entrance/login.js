@@ -34,7 +34,9 @@ password attempt.`,
 `Note that this is NOT SUPPORTED when using virtual requests (e.g. sending
 requests over WebSockets instead of HTTP).`,
       type: 'boolean'
-    }
+    },
+
+  
 
   },
 
@@ -79,7 +81,7 @@ and exposed as \`req.me\`.)`
     });
 
     // If there was no matching user, respond thru the "badCombo" exit.
-    if(!userRecord) {
+    if(!userRecord ) {
       throw 'badCombo';
     }
 
